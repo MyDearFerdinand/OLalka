@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Rating from "../components/Rating";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingBox from "../components/LoadingBox";
-import MassageBox from "../components/MassageBox";
+import MessageBox from "../components/MessageBox";
 import { detailsProduct } from "../actions/productActions";
 
 export default function ProductScreen(props) {
@@ -26,7 +26,7 @@ export default function ProductScreen(props) {
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
-        <MassageBox variant="danger">{error}</MassageBox>
+        <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
           <Link to="/">Back to result</Link>
