@@ -1,7 +1,21 @@
+import bcrypt from "bcryptjs";
 const data = {
+  users: [
+    {
+      name: "Vlad",
+      email: "vlad.maidanyuk95@gmail.com",
+      password: bcrypt.hashSync("Alex62alex", 8),
+      isAdmin: true,
+    },
+    {
+      name: "Olga",
+      email: "marmoklive666@gmail.com",
+      password: bcrypt.hashSync("alex28alex", 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: "1",
       name: "Elisabeth doll",
       category: "Shmatyanka",
       image: "/images/p1.jpg",
@@ -13,7 +27,6 @@ const data = {
       description: "high quality interier doll",
     },
     {
-      _id: "2",
       name: "Gloria doll",
       category: "Shmatyanka",
       image: "/images/p2.jpg",
@@ -25,7 +38,6 @@ const data = {
       description: "high quality interier doll",
     },
     {
-      _id: "3",
       name: "Jess doll",
       category: "Shmatyanka",
       image: "/images/p3.jpg",
@@ -37,7 +49,6 @@ const data = {
       description: "high quality interier doll",
     },
     {
-      _id: "4",
       name: "Kasia doll",
       category: "Shmatyanka",
       image: "/images/p4.jpg",
@@ -49,7 +60,6 @@ const data = {
       description: "high quality interier doll",
     },
     {
-      _id: "5",
       name: "Busya doll",
       category: "Shmatyanka",
       image: "/images/p5.jpg",
@@ -61,7 +71,6 @@ const data = {
       description: "high quality interier doll",
     },
     {
-      _id: "6",
       name: "Julya doll",
       category: "Shmatyanka",
       image: "/images/p6.jpg",
