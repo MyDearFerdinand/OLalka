@@ -1,23 +1,49 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { signin } from "../actions/userActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
-export default function SignInScreen() {
+export default function SignInScreen(props) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { search } = useLocation();
+  const redirectInUrl = new URLSearchParams(search).get("redirect");
+  const redirect = redirectInUrl ? redirectInUrl : "/";
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo, loading, error } = userSignin;
+
+  const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    // TODO: signin action
+    dispatch(signin(email, password));
+    if (!error) {
+      navigate("/");
+    }
   };
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [props.history, redirect, userInfo]);
+
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
           <h1>Sign In</h1>
         </div>
+        {loading && <LoadingBox></LoadingBox>}
+        {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
           <label htmlFor="email">Email address</label>
           <input
-            tupe="email"
+            type="email"
             id="email"
             placeholder="Enter email"
             required
@@ -27,7 +53,7 @@ export default function SignInScreen() {
         <div>
           <label htmlFor="password">Password</label>
           <input
-            tupe="password"
+            type="password"
             id="password"
             placeholder="Enter password"
             required

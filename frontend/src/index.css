@@ -100,8 +100,8 @@ a.brand {
   font-weight: bold;
 }
 .badge {
-  background-color: red;
-  color: white;
+  background-color: #ffe147;
+  color: #262035;
   border-radius: 50%;
   padding: 0.2rem 0.7rem;
   font-size: 1.4rem;
@@ -125,7 +125,7 @@ a.brand {
 .col-2 {
   flex: 2 1 50rem;
 }
-.min-30{
+.min-30 {
   min-width: 30rem;
 }
 /* Images */
@@ -188,16 +188,39 @@ img.large {
   background-color: #ffdddd;
 }
 /* Form */
-.form{
+.form {
   max-width: 60rem;
   margin: 0 auto;
 }
-.form>div{
+.form > div {
   display: flex;
   flex-direction: column;
   margin: 1rem;
 }
-.form label{
+.form label {
   margin: 1rem 0;
   display: block;
+}
+/* Dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #ffdddd;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown a:hover {
+  color: #a7dadb;
 }
