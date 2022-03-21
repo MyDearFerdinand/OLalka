@@ -33,7 +33,7 @@ export default function RegisterScreen(props) {
     if (userInfo) {
       navigate(redirect);
     }
-  }, [navigate, props.history, redirect, userInfo]);
+  }, [navigate, redirect, userInfo]);
 
   return (
     <div>
@@ -93,7 +93,7 @@ export default function RegisterScreen(props) {
           <label />
           <div>
             Already have an account?{" "}
-            <Link to={`/signin?redirect=${redirect}`}>Create your account</Link>
+            <Link to={`/signin?redirect=${redirect}`}>Sign In</Link>
           </div>
         </div>
       </form>

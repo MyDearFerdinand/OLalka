@@ -227,3 +227,15 @@ img.large {
 .dropdown a:hover {
   color: #a7dadb;
 }
+/* Checkout Steps*/
+.checkout-steps > div{
+  border-top: 0.3rem #ffdddd solid;
+  color: #ffdddd;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active{
+  border-top-color: #a7dadb;
+  color: #a7dadb;
+}

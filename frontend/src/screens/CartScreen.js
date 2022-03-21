@@ -21,11 +21,10 @@ export default function CartScreen(props) {
     }
   }, [dispatch, productId, qty]);
   const removeFromCartHandler = (id) => {
-    // delete action
     dispatch(removeFromCart(id));
   };
   const checkoutHandler = () => {
-    navigate("/signin?redirect=shipping");
+    navigate(`/shipping?redirect=/shipping`);
   };
   return (
     <div className="row top">
