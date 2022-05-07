@@ -25,7 +25,6 @@ export default function ShippingAddressScreen() {
       saveShippingAddress({ fullName, address, city, postalCode, country })
     );
     navigate("/payment");
-    // TODO: dispatch save shipping adress action
   };
   return (
     <div>
